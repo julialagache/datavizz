@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Destination Festivals : l'atlas des festivals en France</title>
+  <meta name="description" content="7 273 festivals recensés en France : où ils sont, quand ils ont lieu, depuis quand ils existent. Un atlas en données ouvertes, sources à l'appui.">
+  <meta property="og:title" content="Destination Festivals : l'atlas des festivals en France">
+  <meta property="og:description" content="7 273 festivals, une carte, et ce que les données racontent vraiment.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/photos/foule-couleurs.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23101117'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23e8368f'/%3E%3Ccircle cx='21' cy='12' r='3' fill='%232c9be8'/%3E%3Ccircle cx='13' cy='22' r='3' fill='%23d99a00'/%3E%3Ccircle cx='22' cy='21' r='4' fill='%2310a877'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@1,6..96,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#carte">Aller au contenu</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top">Destination<em>Festivals</em></a>
+    <nav aria-label="Sections">
+      <a href="#carte">Carte</a>
+      <a href="#disciplines">Disciplines</a>
+      <a href="#ete">Saisons</a>
+      <a href="#histoire">Histoire</a>
+      <a href="#corse">Corse</a>
+      <a href="#economie">Économie</a>
+      <a href="#methode">Méthode</a>
+    </nav>
+    <a class="topbar-cta" href="#annuaire">Trouver un festival</a>
+  </header>
+
+  <main id="top">
+    <!-- ACCUEIL -->
+    <section class="hero dark">
+      <div class="hero-text">
+        <p class="eyebrow">L'atlas des festivals en France</p>
+        <h1 aria-label="7 273 festivals. Chaque point en est un.">
+          <span class="hero-number" id="heroCount" data-s="total">7 273</span>
+          <span class="hero-word">festivals.</span>
+          <span class="hero-tag">Chaque point en est un.</span>
+        </h1>
+        <p class="hero-lede">Du jazz dans le Gers à la bande dessinée à Angoulême, le pays en compte l'équivalent de <strong><span data-s="perDay">20</span> par jour de l'année</strong>. Voici où ils sont, quand ils ont lieu, et ce que les données disent vraiment.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#carte">Explorer la carte</a>
+          <a class="btn btn-line" href="#annuaire">Chercher un festival</a>
+        </div>
+      </div>
+
+      <div class="hero-map">
+        <canvas id="dotMap" role="img" aria-label="Carte de France formée de points colorés, un par festival. La répartition par région est détaillée dans la section Carte."></canvas>
+        <div class="dot-legend" id="dotLegend" role="group" aria-label="Filtrer les points par discipline"></div>
+        <p class="dot-note">Un point, un festival, placé au hasard dans sa région : le fichier national ne donne pas la commune.</p>
+      </div>
+
+      <p class="hero-sources">Sources : ministère de la Culture, Open Data Corse, Insee, CNM. <a href="#methode">Comment ces chiffres sont calculés</a></p>
+    </section>
+
+    <!-- EN BREF -->
+    <section class="paper keyfacts" aria-labelledby="bref-title">
+      <div class="wrap">
+        <h2 class="sr" id="bref-title">L'essentiel en quatre chiffres</h2>
+        <ol class="facts">
+          <li class="reveal">
+            <span class="fact-num" data-s="topN">944</span>
+            <span class="fact-text"><strong>en Auvergne-Rhône-Alpes,</strong> la région qui en compte le plus, juste devant Provence-Alpes-Côte d'Azur.</span>
+          </li>
+          <li class="reveal">
+            <span class="fact-num" data-s="denseVal">19,4</span>
+            <span class="fact-text"><strong>pour 100 000 habitants en Corse,</strong> <span data-s="denseRatio">3,7</span> fois plus qu'en Île-de-France.</span>
+          </li>
+          <li class="reveal">
+            <span class="fact-num"><span data-s="musicPct">44</span>&nbsp;%</span>
+            <span class="fact-text"><strong>sont des festivals de musique.</strong> C'est la première discipline dans les 13 régions de métropole.</span>
+          </li>
+          <li class="reveal">
+            <span class="fact-num"><span data-s="since2010">48</span>&nbsp;%</span>
+            <span class="fact-text"><strong>sont nés depuis 2010,</strong> parmi ceux dont l'année de création est connue.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PHOTOS -->
+    <section class="photo-strip dark" aria-label="Photographies de festivals">
+      <div class="strip-track">
+        <figure><img src="assets/photos/cour-honneur-avignon.jpg" alt="Gradins pleins devant la scène de la Cour d'honneur du Palais des papes, à Avignon, à la tombée de la nuit" loading="lazy" width="1200" height="680"><figcaption>Cour d'honneur, Avignon</figcaption></figure>
+        <figure><img src="assets/photos/foule-couleurs.jpg" alt="Foule sous un nuage de poudres colorées devant une grande scène" loading="lazy" width="1256" height="826"></figure>
+        <figure><img src="assets/photos/echassiers-nuit.jpg" alt="Échassière vêtue de blanc déambulant de nuit au milieu du public" loading="lazy" width="1200" height="800"></figure>
+        <figure><img src="assets/photos/scene-rock-en-seine.jpg" alt="Grande scène de Rock en Seine vue depuis le public" loading="lazy" width="1500" height="999"><figcaption>Rock en Seine</figcaption></figure>
+        <figure><img src="assets/photos/concert-acoustique.jpg" alt="Trio de guitares en concert devant une façade de pierre éclairée" loading="lazy" width="1400" height="933"></figure>
+        <figure><img src="assets/photos/foule-orange.jpg" alt="Silhouette bras levés au-dessus de la foule dans une lumière orange" loading="lazy" width="1200" height="750"></figure>
+      </div>
+    </section>
+
+    <!-- CARTE -->
+    <section class="paper section" id="carte">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">01 · Le territoire</p>
+          <h2>Le plus de festivals n'est pas le plus <em>dense</em></h2>
+          <p class="lede">En volume, trois régions dépassent les 900 festivals. Rapportée à la population, la carte se renverse : l'Île-de-France passe dernière et la Corse première.</p>
+        </header>
+
+        <div class="segmented" role="group" aria-label="Mesure affichée sur la carte">
+          <button type="button" data-metric="n" aria-pressed="true">Nombre de festivals</button>
+          <button type="button" data-metric="d" aria-pressed="false">Pour 100 000 habitants</button>
+        </div>
+
+        <div class="map-layout">
+          <div class="choro-box">
+            <svg id="choro" viewBox="0 0 800 850" aria-hidden="true"></svg>
+            <div class="scale" aria-hidden="true"><span id="scaleMin"></span><i></i><span id="scaleMax"></span></div>
+          </div>
+          <aside class="region-panel" id="regionPanel" aria-live="polite"></aside>
+          <div class="ranking" id="ranking"></div>
+        </div>
+        <p class="note">Le classement porte sur les 13 régions de métropole. L'outre-mer compte <span data-s="outreMer">145</span> festivals, consultables dans l'annuaire. Population : Insee, estimations au 1<sup>er</sup> janvier 2023.</p>
+      </div>
+    </section>
+
+    <!-- DISCIPLINES -->
+    <section class="paper section section-rule" id="disciplines">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">02 · Les disciplines</p>
+          <h2>La musique partout, mais chaque région a son <em>accent</em></h2>
+          <p class="lede">Près d'un festival sur deux est musical. L'écart à la moyenne nationale révèle ce qui distingue vraiment chaque territoire.</p>
+        </header>
+        <div class="segbar" id="segbar" role="img" aria-label="Répartition nationale des festivals par discipline"></div>
+        <div class="segbar-legend" id="segbarLegend"></div>
+
+        <h3 class="chart-title">Part de chaque discipline par région, en % des festivals de la région</h3>
+        <div class="heat-legend" aria-hidden="true">
+          <span>Sous la moyenne nationale</span><i></i><span>Au-dessus</span>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Tableau des disciplines par région">
+          <table class="heat" id="heat"></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAISONS -->
+    <section class="dark section season" id="ete">
+      <div class="season-bg" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">03 · Les saisons</p>
+          <h2>L'été bat tous les records. Il ne fait pas <em>tout</em></h2>
+          <p class="lede">En plein été, il y a <strong><span data-s="weekly">2,3</span> fois plus</strong> de festivals par semaine que le reste de l'année. Mais <strong><span data-s="horsSaison">62</span> %</strong> se tiennent en dehors de ces onze semaines.</p>
+        </header>
+        <div class="mekko" id="mekko" role="img" aria-label="Festivals par semaine selon la période de l'année"></div>
+        <div class="mekko-axis" aria-hidden="true"><span>1<sup>er</sup> janv.</span><span class="mid-a">21 juin</span><span class="mid-b">6 sept.</span><span>31 déc.</span></div>
+        <p class="note">La largeur de chaque bloc représente la durée de la période, sa hauteur le nombre de festivals par semaine, et sa surface le nombre total de festivals. <span data-s="periodeInconnue">76</span> festivals sans période exploitable ne sont pas comptés.</p>
+      </div>
+    </section>
+
+    <!-- HISTOIRE -->
+    <section class="paper section" id="histoire">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">04 · L'histoire</p>
+          <h2>Trois festivals sur quatre sont nés depuis <em>l'an 2000</em></h2>
+          <p class="lede">Soit <span data-s="since2000">76</span> % de ceux dont on connaît la date. Le pic de créations arrive en <span data-s="peakYear">2015</span>, avec <span data-s="peakN">365</span> nouveaux rendez-vous recensés.</p>
+        </header>
+        <h3 class="chart-title">Festivals recensés selon leur année de création</h3>
+        <div class="chart" id="historyChart"></div>
+        <p class="note">Ce graphique montre les festivals en activité dans le recensement, pas tous ceux qui ont existé : ceux qui ont disparu n'y figurent pas, ce qui gonfle mécaniquement les années récentes. La chute après 2019 s'explique sans doute par la date du recensement et par la pandémie. Base : <span data-s="known">5 761</span> festivals à l'année de création exploitable.</p>
+      </div>
+    </section>
+
+    <!-- CORSE -->
+    <section class="dark section corse" id="corse">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">05 · Gros plan</p>
+          <h2>La Corse, première région de France <em>par habitant</em></h2>
+          <p class="lede">Avec <span data-s="corseN">69</span> festivals au recensement national pour environ 355 000 habitants, l'île devance toutes les régions. Le panorama régional en détaille <span data-s="corseListe">24</span>, tous localisés.</p>
+        </header>
+        <div class="corse-layout">
+          <div class="corse-map-box">
+            <svg id="corseMap" role="group" aria-label="Carte de Corse avec les 24 festivals du panorama régional"></svg>
+          </div>
+          <div class="corse-side">
+            <div class="corse-stats">
+              <p><span class="stat-big" data-s="corseHC">14</span> en Haute-Corse</p>
+              <p><span class="stat-big" data-s="corseCS">10</span> en Corse-du-Sud</p>
+              <p><span class="stat-big" data-s="corseHors">13</span> hors juillet-août</p>
+            </div>
+            <h3 class="chart-title">Le calendrier de l'île, festival par festival</h3>
+            <div class="months" id="corseMonths"></div>
+            <div class="legend" id="corseLegend"></div>
+            <p class="corse-text">Juillet domine, mais la saison ne s'arrête pas en septembre : l'automne appartient au cinéma, avec <span data-s="corseFilms">6</span> festivals de films en octobre et novembre, à Ajaccio, Bastia et Porto-Vecchio.</p>
+          </div>
+        </div>
+        <details class="corse-list">
+          <summary>Voir les <span data-s="corseListe">24</span> festivals</summary>
+          <ul id="corseList"></ul>
+        </details>
+        <p class="note">Pourquoi 69 et 24 ? Les deux fichiers n'ont ni le même périmètre, ni la même date : le recensement national est plus large que le panorama régional, publié avec des éditions 2018-2019. Les sites web cités datent de ce panorama.</p>
+      </div>
+    </section>
+
+    <!-- ÉCONOMIE -->
+    <section class="dark section eco" id="economie">
+      <div class="eco-bg" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">06 · L'économie</p>
+          <h2>Complets, et pourtant <em>dans le rouge</em></h2>
+        </header>
+        <div class="eco-layout">
+          <div class="eco-big reveal">
+            <p class="eco-num">68&nbsp;%</p>
+            <p class="eco-label">des festivals remplis à 90&nbsp;% ou plus étaient déficitaires en 2024, contre 42&nbsp;% en 2023.</p>
+            <p class="eco-sub">Sur les 31 festivals concernés du panel. Sur l'ensemble des 107 festivals étudiés, 62&nbsp;% finissent en déficit, pour un résultat moyen de −42&nbsp;177&nbsp;€.</p>
+          </div>
+          <div class="eco-chart">
+            <h3 class="chart-title">Évolution entre 2023 et 2024</h3>
+            <div id="ecoBars"></div>
+            <p class="eco-sub">Les charges progressent plus vite que les recettes, et trois fois plus vite que l'inflation.</p>
+          </div>
+        </div>
+        <p class="note">Source : Centre national de la musique, <a href="https://cnm.fr/wp-content/uploads/2025/07/CNM_Economie-des-festivals-2024_Publication.pdf" rel="noopener" target="_blank">Économie des festivals, données 2024</a>. Le panel réunit 107 festivals de musiques actuelles et de variétés aidés par le CNM : il n'est pas représentatif de tous les festivals. Pour situer le secteur : la culture pèse <a href="https://www.culture.gouv.fr/espace-documentation/service-statistique-ministeriel-deps/publications/collections-de-synthese/culture-chiffres-2007-2026/le-poids-economique-direct-de-la-culture-en-2023-cc-2025-2" rel="noopener" target="_blank">49,5 milliards d'euros en 2023</a>, soit 2,0&nbsp;% de l'économie (DEPS).</p>
+      </div>
+    </section>
+
+    <!-- ANNUAIRE -->
+    <section class="paper section" id="annuaire">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">07 · L'annuaire</p>
+          <h2>Trouvez le <em>vôtre</em></h2>
+          <p class="lede">Les <span data-s="total">7 273</span> festivals du recensement, à fouiller par nom, région, discipline ou période.</p>
+        </header>
+        <form class="filters" id="filters" role="search" onsubmit="return false">
+          <label class="f-search"><span>Nom</span><input type="search" id="fName" placeholder="Hellfest, jazz, polar…" autocomplete="off"></label>
+          <label><span>Région</span><select id="fRegion"></select></label>
+          <label><span>Discipline</span><select id="fDisc"></select></label>
+          <label><span>Période</span><select id="fPeriod"></select></label>
+        </form>
+        <div class="results-bar">
+          <p id="resultCount" aria-live="polite"></p>
+          <button type="button" class="link-btn" id="resetFilters">Réinitialiser</button>
+          <button type="button" class="link-btn" id="downloadCsv">Télécharger la sélection (CSV)</button>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Résultats de l'annuaire">
+          <table class="results">
+            <thead><tr><th scope="col">Festival</th><th scope="col">Région</th><th scope="col">Discipline</th><th scope="col">Période</th><th scope="col" class="num">Création</th></tr></thead>
+            <tbody id="resultRows"></tbody>
+          </table>
+        </div>
+        <button type="button" class="btn btn-ink" id="moreRows">Afficher plus</button>
+      </div>
+    </section>
+
+    <!-- MÉTHODE -->
+    <section class="paper section section-rule" id="methode">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">08 · La méthode</p>
+          <h2>D'où viennent <em>ces chiffres</em></h2>
+          <p class="lede">Tous les chiffres sur les festivals sont calculés automatiquement à partir des fichiers ci-dessous. Rien n'est saisi à la main, et les limites sont dites.</p>
+        </header>
+        <div class="method-grid">
+          <div>
+            <h3>Les sources</h3>
+            <ul>
+              <li><a href="https://www.data.gouv.fr/datasets/liste-des-festivals-en-france/" rel="noopener" target="_blank">Liste des festivals en France</a> : ministère de la Culture, Cartographie nationale (Deps-doc, France Festivals, Cepel, 2022), Licence Ouverte 2.0.</li>
+              <li><a href="https://opendata.corsica/" rel="noopener" target="_blank">Panorama des festivals en Corse</a> : Open Data Corse.</li>
+              <li><a href="https://www.insee.fr/fr/statistiques/2012713" rel="noopener" target="_blank">Population des régions</a> : Insee, estimations au 1<sup>er</sup> janvier 2023.</li>
+              <li><a href="https://cnm.fr/wp-content/uploads/2025/07/CNM_Economie-des-festivals-2024_Publication.pdf" rel="noopener" target="_blank">Économie des festivals 2024</a> : Centre national de la musique.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Le nettoyage</h3>
+            <ul>
+              <li><span data-s="lignes">7 283</span> lignes dans le fichier d'origine, <span data-s="doublons">10</span> doublons strictement identiques retirés, soit <span data-s="total">7 273</span> festivals. Les homonymes sont gardés : il existe plusieurs « Festival du rire ».</li>
+              <li>L'année de création est manquante ou inexploitable pour <span data-s="anneeInconnue">1 512</span> festivals (par exemple « 19ème », soit <span data-s="anneeIllisible">66</span> saisies non datées). Ils restent comptés partout, sauf dans le graphique d'histoire.</li>
+              <li>Période : les mois isolés sont rattachés à leur saison. Juin et septembre, à cheval entre deux périodes, restent « non précisés ».</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Les limites</h3>
+            <ul>
+              <li>Le recensement retient des événements actifs en 2019, de plus d'une journée, avec au moins cinq spectacles ou projections. Il ne fixe pas de définition officielle du festival : d'autres décomptes donnent d'autres totaux.</li>
+              <li>Le fichier national classe chaque festival par région, pas par commune : les points de l'accueil sont placés au hasard dans leur région.</li>
+              <li>La discipline est celle jugée dominante : un festival mêlant jazz et cinéma ne compte qu'une fois.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer dark">
+    <div class="wrap footer-grid">
+      <p class="footer-brand">Destination<em>Festivals</em></p>
+      <p>Conception et réalisation : Julia Lagache, dans le cadre de la SAE&nbsp;3.03.<br>© 2026</p>
+    </div>
+  </footer>
+
+  <div id="tip" class="tip" role="status" hidden></div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
