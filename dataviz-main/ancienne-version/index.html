@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Festivals en France et en Corse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-animate">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <div id="header-glow"></div>
+
+    <section class="hero-landing">
+        <div class="hero-container">
+            <div class="info-text-side">
+                <h1 class="title">Destination Festivals</h1>
+                <p class="hero-description">
+                    De l’effervescence des métropoles aux rivages sauvages de la Méditerranée, voyagez au cœur du patrimoine festif français. 
+                    <br><br>
+                    Explorez la diversité des <strong>3 000 festivals</strong> qui font vibrer l'hexagone. 
+                    Un panorama complet, entre données précises et immersion visuelle.
+                </p>
+                <div class="nav-buttons-inline">
+                    <a href="#visualization" class="scroll-btn">Explorer la France</a>
+                    <a href="#corsica-visualization" class="scroll-btn btn-corse">Découvrir la Corse</a>
+                    <a href="#map-section" class="scroll-btn btn-carte">Carte Interactive</a>
+                    </div>
+                    </div>
+                    </div>
+            <div class="parent">
+                <div class="columns-wrapper">
+                <div class="image-column">
+                <div class="track up">
+                <img src="1.jpg" alt="1" /><img src="2.jpg" alt="2" />
+                <img src="3.jpg.webp" alt="3" /><img src="4.jpg" alt="4" />
+                <img src="1.jpg" alt="1" /><img src="2.jpg" alt="2" />
+                <img src="3.jpg.webp" alt="3" /><img src="4.jpg" alt="4" />
+                </div>
+                </div>
+                <div class="image-column">
+                <div class="track down">
+                <img src="5.jpg" alt="5" /><img src="6.jpeg" alt="6" />
+                <img src="7.jpg" alt="7" /><img src="8.jpg" alt="8" />
+                <img src="5.jpg" alt="5" /><img src="6.jpeg" alt="6" />
+                <img src="7.jpg" alt="7" /><img src="8.jpg" alt="8" />
+                </div>
+                </div>
+                <div class="image-column">
+                <div class="track up">
+                <img src="9.jpg" alt="9" /><img src="10.jpg" alt="10" />
+                <img src="11.jpeg" alt="11" /><img src="12.jpg" alt="12" />
+                <img src="9.jpg" alt="9" /><img src="10.jpg" alt="10" />
+                <img src="11.jpeg" alt="11" /><img src="12.jpg" alt="12" />
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>
+
+    <section class="countries-section" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">Explorez le Territoire</h2>
+        <p style="text-align: center; color: #bbb; margin-bottom: 2rem;">Survolez une région pour découvrir son identité culturelle</p>
+        <div class="mobile-message">
+            Cette fonctionnalité est disponible uniquement sur ordinateur.
+        </div>
+        
+        <section class="map-interactive-container" id="map-section">
+            <div class="france" id="france-text-map">
+                <a href="#" title="Grand Est"><span class="alsa"><span class="s01">Al</span><span class="s02">sa</span><span class="s03">ce</span></span></a>
+                <a href="#" title="Grand Est"><span class="cham"><span class="s17">Cha</span><span class="s18">mp</span><span class="s19">agne-</span><span class="s20">Arden</span><span class="s21">ne</span></span></a>
+                <a href="#" title="Grand Est"><span class="lorr"><span class="s40">Lor</span><span class="s41">rai</span><span class="s42">ne</span></span></a>
+                
+                <a href="#" title="Nouvelle-Aquitaine"><span class="aqui"><span class="s04">Aqu</span><span class="s05">ita</span><span class="s06">ine</span></span></a>
+                <a href="#" title="Nouvelle-Aquitaine"><span class="limo"><span class="s37">Li</span><span class="s38">mou</span><span class="s39">sin</span></span></a>
+                <a href="#" title="Nouvelle-Aquitaine"><span class="poit"><span class="s60">Poitou</span><span class="s61">Chare</span><span class="s62">ntes</span></span></a>
+
+                <a href="#" title="Auvergne-Rhône-Alpes"><span class="auve"><span class="s07">Auv</span><span class="s08">er</span><span class="s09">gne</span></span></a>
+                <a href="#" title="Auvergne-Rhône-Alpes"><span class="rhon"><span class="s68">Rhone</span><span class="s69">-Alp</span><span class="s70">es</span></span></a>
+
+                <a href="#" title="Bourgogne-Franche-Comté"><span class="bour"><span class="s10">Bou</span><span class="s11">rgog</span><span class="s12">ne</span></span></a>
+                <a href="#" title="Bourgogne-Franche-Comté"><span class="fran"><span class="s25">Fra</span><span class="s26">nche</span><span class="s27">-Com</span><span class="s28">te</span></span></a>
+
+                <a href="#" title="Bretagne"><span class="bret"><span class="s13">Breta</span><span class="s14">gne</span></span></a>
+                <a href="#" title="Centre-Val de Loire"><span class="cent"><span class="s15">Cen</span><span class="s16">tre</span></span></a>
+                <a href="#" title="Corse"><span class="cors"><span class="s22">Co</span><span class="s23">rs</span><span class="s24">e</span></span></a>
+                <a href="#" title="Île-de-France"><span class="idfr"><span class="s29">Ile-de</span><span class="s30">-France</span></span></a>
+                
+                <a href="#" title="Occitanie"><span class="lang"><span class="s31">Lan</span><span class="s32">gue</span><span class="s33">doc-</span><span class="s34">Rous</span><span class="s35">sil</span><span class="s36">lon</span></span></a>
+                <a href="#" title="Occitanie"><span class="mipy"><span class="s43">Midi</span><span class="s44">Pyre</span><span class="s45">nees</span></span></a>
+
+                <a href="#" title="Hauts-de-France"><span class="npdc"><span class="s46">Nord</span><span class="s47">Pas-de-Calais</span></span></a>
+                <a href="#" title="Hauts-de-France"><span class="pica"><span class="s58">Picar</span><span class="s59">die</span></span></a>
+
+                <a href="#" title="Normandie"><span class="bnor"><span class="s48">Basse</span><span class="s49">Norm</span><span class="s50">andie</span></span></a>
+                <a href="#" title="Normandie"><span class="hnor"><span class="s51">Haute</span><span class="s52">Normandie</span></span></a>
+
+                <a href="#" title="Pays de la Loire"><span class="pdll"><span class="s53">Pays</span><span class="s54">de</span><span class="s55">la</span><span class="s56">Loi</span><span class="s57">re</span></span></a>
+                <a href="#" title="Provence-Alpes-Côte d'Azur"><span class="paca"><span class="s63">Pro</span><span class="s64">ven</span><span class="s65">ce-Alpes</span><span class="s66">Cote</span><span class="s67">Azur</span></span></a>
+            </div>
+        
+            <div id="region-info-panel" class="info-reveal visible">
+                <div class="badge">Analyse Régionale</div>
+                <h3 id="info-region-name">Sélectionnez une zone</h3>
+                <p class="stat-number" id="info-region-count">--</p>
+                <p class="stat-label">Festivals identifiés</p>
+                <p class="desc" id="info-region-desc">Survolez la carte pour voir les genres dominants par territoire.</p>
+            </div>
+        </section>
+        
+    </section>
+    
+    
+    <section class="countries-section" id="visualization">
+        <h2 class="section-title">Analyse Comparative</h2>
+        <input type="text" id="searchInput" placeholder="Rechercher une région..." class="search-bar">
+    
+        <div class="chart-section-wrapper">
+            <div class="chart-container">
+                <canvas id="barChart" width="900" height="400"></canvas>
+            </div>
+            <div class="info-reveal" id="reveal-idf">
+                <div class="badge">Record</div>
+                <h3>Île-de-France</h3>
+                <p class="stat-number"><span class="counter-scroll" data-target="620">0</span></p>
+                <p class="stat-label">Festivals répertoriés</p>
+                <span class="desc">C'est la région la plus dense en événements culturels.</span>
+            </div>
+        </div>
+        <section class="stats-container">
+            <h2 class="section-title">Évolution des créations de festivals</h2>
+            <p style="text-align: center; color: #ccc; margin-bottom: 20px;">
+                Ce graphique montre l'accélération du nombre de festivals créés par année.
+            </p>
+            <div style=" padding: 20px; border-radius: 15px;">
+                <canvas id="evolutionChart"></canvas>
+            </div>
+        </section>
+        <div class="info-container">
+            <div class="info-block"><div class="info-icon">🎭</div><h3>Un moteur culturel</h3><p>La France compte plus de 3 000 festivals actifs, piliers du rayonnement territorial.</p></div>
+            <div class="info-block"><div class="info-icon">📈</div><h3>Impact Économique</h3><p>Le secteur génère une hausse moyenne de 30% de fréquentation touristique locale.</p></div>
+            <div class="info-block"><div class="info-icon">🎸</div><h3>Diversité des Genres</h3><p>Musiques actuelles, théâtre et cinéma forment le trio de tête des disciplines.</p></div>
+        </div>
+        <section class="stats-container side-by-side">
+            <div class="chart-box">
+                <canvas id="seasonChart"></canvas>
+            </div>
+        
+            <div class="text-box">
+                <h2 class="section-title">Le Triomphe de l'Été</h2>
+                <p>
+                    Cette visualisation met en évidence la domination de la période estivale. 
+                    Alors que les festivals se répartissent sur toute l'année, la "Saison" (21 juin - 5 septembre) 
+                    concentre à elle seule une immense partie de l'offre culturelle française.
+                </p>
+                <div class="legend-simple">
+                    <span style="color: #f1c40f;">● Été</span><br>
+                    <span style="color: #95a5a6;">● Reste de l'année</span>
+                </div>
+            </div>
+        </section>
+        <section class="stats-visual-section">
+            <div class="stats-text">
+                <h2 class="section-title" style="text-align: left;">Répartition des Genres</h2>
+                <p>Le paysage ne se limite pas aux concerts géants. La diversité permet de mailler le territoire, des zones rurales aux pôles urbains.</p>
+                <div class="legend">
+                    <span class="dot music"></span> Musique <span class="dot theater"></span> Théâtre <span class="dot cinema"></span> Cinéma
+                </div>
+            </div>
+            <div class="stats-bubbles-container">
+                <div class="bubble music" style="--size: 160px;"><span>Musique<br>45%</span></div>
+                <div class="bubble theater" style="--size: 130px;"><span>Théâtre<br>25%</span></div>
+                <div class="bubble cinema" style="--size: 100px;"><span>Cinéma<br>15%</span></div>
+                <div class="bubble art" style="--size: 80px;"><span>Autres<br>15%</span></div>
+            </div>
+        </section>
+    </section>
+
+    <section class="countries-section" id="corsica-visualization">
+        <h2 class="section-title">Focus sur La Corse</h2>
+    
+        <section class="stats-container side-by-side">
+            <div class="text-box">
+                <h2 class="section-title-corse">Équilibre Territorial</h2>
+                <p>
+                    L'analyse géographique révèle une répartition équitable de l'offre culturelle sur l'île. 
+                    La <strong>Haute-Corse</strong> et la <strong>Corse-du-Sud</strong> se partagent les événements, 
+                    prouvant que la culture est un levier de développement pour l'ensemble du territoire insulaire.
+                </p>
+                <p class="source-data">Répartition par département - Open Data Corse</p>
+            </div>
+            <div class="chart-box-container">
+                <canvas id="corseDeptPieChart"></canvas>
+            </div>
+        </section>
+    
+        <section class="stats-container side-by-side">
+            <div class="chart-box-container">
+                <canvas id="corseDonutChart"></canvas>
+            </div>
+            <div class="text-box">
+                <h2 class="section-title-corse">Répartition par Domaine</h2>
+                <p>
+                    Ce graphique montre la richesse culturelle de la Corse. On remarque que si la musique 
+                    occupe une place centrale, les domaines du cinéma et du livre sont très présents.
+                </p>
+                <p class="source-data">
+                    * Données extraites en temps réel depuis le portail Open Data Corse.
+                </p>
+            </div>
+        </section>
+    
+        <section class="stats-container side-by-side">
+            <div class="text-box">
+                <h2 class="section-title-corse">Calendrier Annuel</h2>
+                <p>
+                    Contrairement aux idées reçues, la culture en Corse ne s'arrête pas en septembre. 
+                    Ce graphique montre des pics d'activité importants au <strong>printemps (avril/mai)</strong> 
+                    et à l'<strong>automne (octobre/novembre)</strong>.
+                </p>
+                <p class="source-data">Analyse des cycles événementiels - Open Data</p>
+            </div>
+            <div class="chart-box-radar">
+                <canvas id="corseSeasonRadarChart"></canvas>
+            </div>
+        </section>
+    </section>
+    
+    <script src="script.js"></script>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Projet Festivals</h3>
+                <p>Analyse et visualisation des données culturelles nationales et régionales dans le cadre de la SAE 3.03.</p>
+                <p><a href="Infographie-festival-Julia-Lagache.pdf" download="Projet_Festivals.pdf">Télécharger l'infographie</a></p>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Sources de données</h3>
+                <ul>
+                    <li><a href="https://www.data.gouv.fr/" target="_blank">Data.gouv.fr</a></li>
+                    <li><a href="https://opendata.corsica/" target="_blank">Open Data Corsica</a></li>
+                    <li><a href="https://www.culture.gouv.fr/" target="_blank">Ministère de la Culture</a></li>
+                    
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Réalisation</h3>
+                <p>Julia Lagache</p>
+                <p>&copy; 2026 </p>
+            </div>
+        </div>
+       
+    </footer>
+</body>
+</html>
